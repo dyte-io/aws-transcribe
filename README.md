@@ -12,7 +12,7 @@ Once done, download the key containing your accessKeyId, secretAccessKey from th
 
 To keep things simple, in this repo, you will be asked to put keys in .env file. Please alter the code as per the security standards of your application.
 
-<b>Note:</b> Without having accessKeyId & secretAccessKey, this repo may not work properly.
+<b>Note:</b> Without having accessKeyId & secretAccessKey, this repo may not work, locally.
 
 
 # How to use
