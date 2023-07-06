@@ -1,0 +1,9 @@
+# typescript
+dist/
+types/
+build/
+node_modules/
+client/dist
+server/dist
+
+client/types

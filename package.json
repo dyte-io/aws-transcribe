@@ -1,0 +1,52 @@
+{
+    "name": "aws-transcribe",
+    "version": "0.0.1",
+    "description": "SDK for audio transcriptions.",
+    "author": "https://github.com/dyte-in",
+    "workspaces": [
+        "client",
+        "server"
+    ],
+    "bugs": {
+        "url": "https://community.dyte.io"
+    },
+    "license": "MIT",
+    "keywords": [],
+    "scripts": {
+        "dev:client": "npm run dev -w client",
+        "dev:server": "npm run dev -w server",
+        "lint": "npm run lint --ws --if-present",
+        "lint:fix": "npm run lint --if-present -- --fix",
+        "build": "npm run build:client",
+        "build:client": "npm run build -w client --if-present",
+        "prepare": "is-ci || husky install",
+        "start:client": "npm start -w client --if-present",
+        "build:client:demo": "npm run build:demo -w client --if-present",
+        "test": "npm t --ws",
+        "publish": "npm publish --access public -w client"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^16.2.1",
+        "@commitlint/config-conventional": "^16.2.1",
+        "@typescript-eslint/eslint-plugin": "^5.11.0",
+        "@typescript-eslint/parser": "^5.11.0",
+        "commitizen": "^4.2.4",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.8.0",
+        "eslint-config-airbnb-base": "^15.0.0",
+        "eslint-plugin-import": "^2.25.4",
+        "husky": "^7.0.0",
+        "is-ci": "^3.0.1",
+        "jest": "^27.5.1"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
+    },
+    "commitlint": {
+        "extends": [
+            "@commitlint/config-conventional"
+        ]
+    }
+}

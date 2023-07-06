@@ -1,0 +1,50 @@
+{
+  "name": "@dytesdk/aws-transcribe",
+  "version": "0.0.1",
+  "description": "Package for audio transcriptions using Google Media Translation APIs.",
+  "author": "https://github.com/dyte-in",
+  "types": "./types/index.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
+  "bugs": {
+    "url": "https://community.dyte.io"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "files": [
+    "dist",
+    "types",
+    "README.md"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint . --ext .ts --ext .js",
+    "lint:fix": "npm run lint -- --fix",
+    "build": "tsc && vite build",
+    "start": "serve -s dist -l 3000 -n",
+    "build:demo": "vite build -c vite.demo.config.ts",
+    "test": "jest --passWithNoTests"
+  },
+  "peerDependencies": {
+    "@dytesdk/ui-kit": ">=1.14.0",
+    "@dytesdk/web-core": ">=0.28.0"
+  },
+  "dependencies": {
+    "@aws-sdk/eventstream-marshaller": "^3.120.0",
+    "@aws-sdk/util-utf8-node": "^3.259.0",
+    "buffer": "^6.0.3",
+    "events": "^3.3.0",
+    "loglevel": "^1.8.0"
+  },
+  "devDependencies": {
+    "vite": "^2.9.13",
+    "@dytesdk/ui-kit": "^1.50.1",
+    "@dytesdk/web-core": "^1.12.4"
+  }
+}

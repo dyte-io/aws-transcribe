@@ -1,0 +1,76 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "airbnb-base",
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true, "optionalDependencies": false, "peerDependencies": false}],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "indent": [
+            "error",
+            4
+        ],
+        "@typescript-eslint/indent": [
+            "off"
+        ],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "no-shadow": "off",
+        "@typescript-eslint/no-shadow": "error",
+        "no-underscore-dangle": "off",
+        "no-undef": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "class-methods-use-this": "off",
+        "no-useless-constructor": "off",
+        "no-console": "off"
+    },
+    "overrides": [
+        {
+            "files": [
+                "**/*.spec.ts",
+                "**/*.spec.js",
+                "**/*.test.ts",
+                "**/*.test.js",
+                "**/__tests__/**/*.[jt]s?(x)"
+            ],
+            "env": {
+                "jest": true
+            }
+        }
+    ],
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        }
+    }
+}

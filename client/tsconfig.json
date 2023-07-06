@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "outDir": "types",
+      "module": "esnext",
+      "target": "esnext",
+      "emitDeclarationOnly": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "preserveConstEnums": true,
+      "resolveJsonModule": true,
+      "declaration": true,
+      "noFallthroughCasesInSwitch": true,
+      "allowJs": true,
+      "types": [
+        "node",
+      ],
+      "lib": [
+        "dom",
+        "dom.iterable",
+        "esnext"
+      ],
+    },
+    "include": [
+      "src/**/*.ts", "src/utils/recorderWorkletProcessor.js",
+    ],
+    "exclude": [
+      "node_modules"
+    ]
+}  
