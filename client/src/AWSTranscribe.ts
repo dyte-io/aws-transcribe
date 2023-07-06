@@ -209,7 +209,7 @@ class AWSTranscribe {
                 transcript = decodeURIComponent(escape(transcript));
 
                 if (this.translate) {
-                    const translationResponse = await fetch(`${this.translationEndpoint}?sourceLanguageCode=${this.source}&targetLanguageCode=${this.target}&text=${transcript}`);
+                    const translationResponse = await fetch(`${this.translationEndpoint}?sourceLanguageCode=${this.source}&targetLanguageCode=${this.target}&text=${encodeURIComponent(transcript)}`);
                     transcript = (await translationResponse.json()).data.translatedText;
                 }
 
