@@ -73,7 +73,7 @@ class AWSTranscribe {
         this.preSignedUrlEndpoint = options.preSignedUrlEndpoint;
         this.translationEndpoint = options.translationEndpoint;
         this.#participants = options.meeting.participants;
-        this.sampleRate = options.sampleRate ?? 8000;
+        this.sampleRate = options.sampleRate ?? 16000;
         this.transcriptions = [];
         this.source = options.source ?? 'en-US';
         this.target = options.target ?? 'hi';
@@ -226,7 +226,7 @@ class AWSTranscribe {
         }
     }
 
-    closeSocket() {
+    async closeSocket() {
         if (this.#socket && this.#socket.readyState === this.#socket.OPEN) {
             // Send an empty frame so that Transcribe initiates a closure of the WebSocket,
             // after submitting all transcripts
@@ -235,6 +235,10 @@ class AWSTranscribe {
             ) as marshaller.Message;
             const emptyBuffer = eventStreamMarshaller.marshall(emptyMessage);
             this.#socket.send(emptyBuffer);
+            this.#mediaStreamSourceNode?.disconnect(this.#processor);
+            this.#processor?.disconnect(this.#audioContext.destination);
+            await this.#audioContext?.close();
+            this.#socket.close();
         }
     }
 

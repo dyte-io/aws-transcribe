@@ -67,7 +67,7 @@ You would see the Dyte meeting loading on this page.
 
 Turn the Mic on and Start Speaking in english (default language) and you should ideally start seeing transcriptions right away.
 
-10. Go through the client/demo/index.ts & server folder and take what is needed to integrate it in your product.
+10. Go through the client/demo/index.ts & server folder and take whatever is needed to integrate it in your product.
 
 <b>Note:</b> Though this package takes the complexity away from you, We recommend that you put your own security practices & robustness around it and not treat these samples as production-grade copy-paste solutions.
 
