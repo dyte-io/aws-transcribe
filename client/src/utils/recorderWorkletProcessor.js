@@ -12,7 +12,7 @@ class RecorderProcessor extends AudioWorkletProcessor {
     // 2. Create a buffer of fixed size
     _buffer = new Float32Array(this.bufferSize);
 
-    sampleRate = 8000;
+    sampleRate = 16000;
 
     constructor() {
         super();
@@ -69,9 +69,6 @@ class RecorderProcessor extends AudioWorkletProcessor {
     }
 
     downsampleBuffer(buffer, outSampleRate) {
-        if (outSampleRate == sampleRate) {
-            return buffer;
-        }
         if (outSampleRate > sampleRate) {
             console.log('downsampling rate show be smaller than original sample rate');
             return buffer;
