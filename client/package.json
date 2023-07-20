@@ -1,6 +1,6 @@
 {
   "name": "@dytesdk/aws-transcribe",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Package for audio transcriptions using Google Media Translation APIs.",
   "author": "https://github.com/dyte-in",
   "types": "./types/index.d.ts",
